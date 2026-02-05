@@ -1,6 +1,0 @@
-services:
-  redis-local:
-    image: redis:7-alpine
-    command: redis-server --requirepass "Tex@2025local"
-    ports:
-      - "6380:6379"

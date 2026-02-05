@@ -1,0 +1,12 @@
+services:
+  redis-preprod-prod:
+    image: redis:7-alpine
+    command: redis-server --requirepass "Tex@2025prod"
+    ports:
+      - "6392:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "Tex@2025prod", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
